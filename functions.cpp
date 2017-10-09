@@ -12,9 +12,9 @@ std::vector<std::string> splitString(
     std::vector<std::string> returnVector;
     std::string tempString = "";
     for (
-        int tag = 0;
-        tag < inputString.length();
-        tag ++
+            int tag = 0;
+            tag < inputString.length();
+            tag ++
             ) {
         if (inputString[tag] == delimiter) {
             returnVector.push_back(tempString);

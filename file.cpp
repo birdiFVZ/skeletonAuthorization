@@ -49,7 +49,7 @@ void file::readFile() {
     std::vector<std::string> lineVector;
     std::vector<std::vector<std::string>> dataVector;
     char delimiter = ';';
-    std::ifstream myFile("D:\\workspace\\Data\\skeleton2Data.txt");
+    std::ifstream myFile("C:\\Users\\Birdi\\CLionProjects\\skeletonAuthorization\\data\\skeleton2Data.txt");
     int lineAmount = 0;
     if (myFile.is_open()) {
         while (getline (myFile,line)) {
