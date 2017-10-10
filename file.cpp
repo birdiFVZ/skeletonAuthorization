@@ -48,8 +48,10 @@ void file::readFile() {
     std::string line;
     std::vector<std::string> lineVector;
     std::vector<std::vector<std::string>> dataVector;
+    std::vector<dataPoint> bodyData;
     char delimiter = ';';
-    std::ifstream myFile("C:\\Users\\Birdi\\CLionProjects\\skeletonAuthorization\\data\\skeleton2Data.txt");
+    //std::ifstream myFile("C:\\Users\\Birdi\\CLionProjects\\skeletonAuthorization\\data\\skeletonDataOneBody.txt");
+    std::ifstream myFile("C:\\Users\\Christoph\\CLionProjects\\skeletonAuthorization\\data\\skeletonDataOneBody.txt");
     int lineAmount = 0;
     if (myFile.is_open()) {
         while (getline (myFile,line)) {
@@ -60,9 +62,21 @@ void file::readFile() {
         }
         myFile.close();
     }
-    std::cout << lineAmount << std::endl;
 
-    std::cout << dataVector[0][0] << std::endl;
+    std::cout << lineAmount << std::endl;
+    std::cout << "==============================" << std::endl;
+
+    int dataTag;
+    int bodyTag;
+    for (bodyTag = 0; bodyTag < lineAmount; bodyTag++) {
+        for (dataTag = 0; dataTag < 24; dataTag++ ) {
+            std::cout << dataVector[bodyTag][dataTag] << " - ";
+        }
+        std::cout << "==============================" << std::endl;
+    }
+
+
+    // std::cout << dataVector[0][0] << std::endl;
 
 
 }
