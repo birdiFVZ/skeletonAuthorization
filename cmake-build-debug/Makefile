@@ -122,32 +122,32 @@ testProject/fast:
 	$(MAKE) -f CMakeFiles\testProject.dir\build.make CMakeFiles/testProject.dir/build
 .PHONY : testProject/fast
 
-file.obj: file.cpp.obj
+File.obj: File.cpp.obj
 
-.PHONY : file.obj
+.PHONY : File.obj
 
 # target to build an object file
-file.cpp.obj:
-	$(MAKE) -f CMakeFiles\testProject.dir\build.make CMakeFiles/testProject.dir/file.cpp.obj
-.PHONY : file.cpp.obj
+File.cpp.obj:
+	$(MAKE) -f CMakeFiles\testProject.dir\build.make CMakeFiles/testProject.dir/File.cpp.obj
+.PHONY : File.cpp.obj
 
-file.i: file.cpp.i
+File.i: File.cpp.i
 
-.PHONY : file.i
+.PHONY : File.i
 
 # target to preprocess a source file
-file.cpp.i:
-	$(MAKE) -f CMakeFiles\testProject.dir\build.make CMakeFiles/testProject.dir/file.cpp.i
-.PHONY : file.cpp.i
+File.cpp.i:
+	$(MAKE) -f CMakeFiles\testProject.dir\build.make CMakeFiles/testProject.dir/File.cpp.i
+.PHONY : File.cpp.i
 
-file.s: file.cpp.s
+File.s: File.cpp.s
 
-.PHONY : file.s
+.PHONY : File.s
 
 # target to generate assembly for a file
-file.cpp.s:
-	$(MAKE) -f CMakeFiles\testProject.dir\build.make CMakeFiles/testProject.dir/file.cpp.s
-.PHONY : file.cpp.s
+File.cpp.s:
+	$(MAKE) -f CMakeFiles\testProject.dir\build.make CMakeFiles/testProject.dir/File.cpp.s
+.PHONY : File.cpp.s
 
 functions.obj: functions.cpp.obj
 
@@ -212,9 +212,9 @@ help:
 	@echo ... testProject
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... file.obj
-	@echo ... file.i
-	@echo ... file.s
+	@echo ... File.obj
+	@echo ... File.i
+	@echo ... File.s
 	@echo ... functions.obj
 	@echo ... functions.i
 	@echo ... functions.s

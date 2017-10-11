@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Christoph/CLionProjects/skeletonAuthorization/File.cpp
+iostream
+-
+fstream
+-
+vector
+-
+File.h
+C:/Users/Christoph/CLionProjects/skeletonAuthorization/File.h
+functions.h
+C:/Users/Christoph/CLionProjects/skeletonAuthorization/functions.h
+
+C:/Users/Christoph/CLionProjects/skeletonAuthorization/File.h
+
+C:/Users/Christoph/CLionProjects/skeletonAuthorization/functions.cpp
+iostream
+-
+functions.h
+C:/Users/Christoph/CLionProjects/skeletonAuthorization/functions.h
+
+C:/Users/Christoph/CLionProjects/skeletonAuthorization/functions.h
+vector
+-
+
+C:/Users/Christoph/CLionProjects/skeletonAuthorization/main.cpp
+iostream
+-
+fstream
+-
+vector
+-
+File.h
+C:/Users/Christoph/CLionProjects/skeletonAuthorization/File.h
+
