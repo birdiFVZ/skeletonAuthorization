@@ -59,6 +59,7 @@ void file::readFile() {
             dataVector.push_back(
                     splitString(line, delimiter)
             );
+            std::cout << line << std::endl;
         }
         myFile.close();
     }
