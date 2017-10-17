@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/File.cpp
+C:/Users/Christoph/CLionProjects/skeletonAuthorizationasdf/File.cpp
 iostream
 -
 fstream
@@ -14,23 +14,23 @@ fstream
 vector
 -
 File.h
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/File.h
+C:/Users/Christoph/CLionProjects/skeletonAuthorizationasdf/File.h
 functions.h
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/functions.h
+C:/Users/Christoph/CLionProjects/skeletonAuthorizationasdf/functions.h
 
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/File.h
+C:/Users/Christoph/CLionProjects/skeletonAuthorizationasdf/File.h
 
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/functions.cpp
+C:/Users/Christoph/CLionProjects/skeletonAuthorizationasdf/functions.cpp
 iostream
 -
 functions.h
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/functions.h
+C:/Users/Christoph/CLionProjects/skeletonAuthorizationasdf/functions.h
 
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/functions.h
+C:/Users/Christoph/CLionProjects/skeletonAuthorizationasdf/functions.h
 vector
 -
 
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/main.cpp
+C:/Users/Christoph/CLionProjects/skeletonAuthorizationasdf/main.cpp
 iostream
 -
 fstream
@@ -38,5 +38,5 @@ fstream
 vector
 -
 File.h
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/File.h
+C:/Users/Christoph/CLionProjects/skeletonAuthorizationasdf/File.h
 

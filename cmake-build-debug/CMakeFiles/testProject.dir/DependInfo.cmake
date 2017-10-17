@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Christoph/CLionProjects/skeletonAuthorization/File.cpp" "C:/Users/Christoph/CLionProjects/skeletonAuthorization/cmake-build-debug/CMakeFiles/testProject.dir/File.cpp.obj"
-  "C:/Users/Christoph/CLionProjects/skeletonAuthorization/functions.cpp" "C:/Users/Christoph/CLionProjects/skeletonAuthorization/cmake-build-debug/CMakeFiles/testProject.dir/functions.cpp.obj"
-  "C:/Users/Christoph/CLionProjects/skeletonAuthorization/main.cpp" "C:/Users/Christoph/CLionProjects/skeletonAuthorization/cmake-build-debug/CMakeFiles/testProject.dir/main.cpp.obj"
+  "C:/Users/Christoph/CLionProjects/skeletonAuthorizationasdf/File.cpp" "C:/Users/Christoph/CLionProjects/skeletonAuthorizationasdf/cmake-build-debug/CMakeFiles/testProject.dir/File.cpp.obj"
+  "C:/Users/Christoph/CLionProjects/skeletonAuthorizationasdf/functions.cpp" "C:/Users/Christoph/CLionProjects/skeletonAuthorizationasdf/cmake-build-debug/CMakeFiles/testProject.dir/functions.cpp.obj"
+  "C:/Users/Christoph/CLionProjects/skeletonAuthorizationasdf/main.cpp" "C:/Users/Christoph/CLionProjects/skeletonAuthorizationasdf/cmake-build-debug/CMakeFiles/testProject.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -6,13 +6,12 @@
 
 #define bodyPoints 25
 
-File::File(void) {
+File::File(std::string inputFile) {
     std::string line;
     std::vector<std::string> lineVector;
     std::vector<std::vector<std::string>> rawDataVector;
     char delimiter = ';';
-    //std::ifstream myFile("C:\\Users\\Birdi\\CLionProjects\\skeletonAuthorization\\data\\skeletonDataOneBody.txt");
-    std::ifstream myFile("C:\\Users\\Christoph\\CLionProjects\\skeletonAuthorization\\data\\skeletonData200.txt");
+    std::ifstream myFile(inputFile);
     int lineAmount = 0;
     if (myFile.is_open()) {
         while (getline (myFile,line)) {
@@ -30,11 +29,11 @@ File::File(void) {
     int bodyPointTag;
     int rawDataTag = 0;
     for (bodyTag = 0; bodyTag < bodyAmount; bodyTag++) {
-        File::dataVector.push_back(std::vector<std::vector<std::string>>());
+        File::rawDataVector.push_back(std::vector<std::vector<std::string>>());
         for(bodyPointTag = 0; bodyPointTag < bodyPoints; bodyPointTag++) {
-            File::dataVector[bodyTag].push_back(std::vector<std::string>());
+            File::rawDataVector[bodyTag].push_back(std::vector<std::string>());
             for (bodyPointDataTag = 0; bodyPointDataTag < 6; bodyPointDataTag++) {
-                File::dataVector[bodyTag][bodyPointTag].push_back(
+                File::rawDataVector[bodyTag][bodyPointTag].push_back(
                         rawDataVector[rawDataTag][bodyPointDataTag]
                 );
             }
@@ -43,35 +42,42 @@ File::File(void) {
     }
 }
 
-void File::calcRelevantData() {
-    std::cout << "data[0][0][0]" << dataVector[0][0][0] << std::endl;
-    std::cout << "dataVector.size(): " << dataVector.size() << std::endl;
-    std::cout << "dataVector[0].size(): " << dataVector[0].size() << std::endl;
-    std::cout << "dataVector[0][0].size(): " << dataVector[0][0].size() << std::endl;
-
-
+void File::buildRawDataVector() {
     int bodyTag;
     int bodyPointTag;
-    int bodyPointDataTag;
     for(bodyTag = 0;
-        bodyTag < dataVector.size();
+        bodyTag < rawDataVector.size();
         bodyTag++) {
         for(bodyPointTag = 0;
-            bodyPointTag < dataVector[bodyTag].size();
+            bodyPointTag < rawDataVector[bodyTag].size();
             bodyPointTag++) {
-            std::cout << "result: " << dataVector[bodyTag][bodyPointTag][5]<< std::endl;
-            std::cout << "bodyPoint" << std::endl;
-            for(bodyPointDataTag = 0;
-                bodyPointDataTag < dataVector[bodyTag][bodyPointTag].size();
-                bodyPointDataTag++) {
-
-                    std::string data =
-                            dataVector[bodyTag][bodyPointTag][bodyPointDataTag];
-                    if(data != "Tracked") {
-                        std::cout << "data: " << data << std::endl;
-                    }
-
+            if (rawDataVector[bodyTag][bodyPointTag][5] != "Tracked") {
+                rawDataVector.erase(rawDataVector.begin() + bodyTag);
+                bodyTag--;
+                break;
             }
         }
     }
+}
+
+void File::buildBodyVector() {
+    //TODO hier weiter machen body vector!!!
+
+    int bodyTag;
+    int bodyPointTag;
+    for(bodyTag = 0;
+        bodyTag < 2;
+        bodyTag++) {
+        bodyVector.push_back(std::vector<bodyProperty>());
+
+        bodyVector[bodyTag].push_back(bodyProperty());
+        bodyProperty test;
+        test.name = "name";
+        test.value = 1.234;
+        bodyVector[bodyTag].push_back(test);
+
+    }
+
+    std::cout << bodyVector[0][0].name;
+
 }
