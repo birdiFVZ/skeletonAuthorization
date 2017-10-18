@@ -11,6 +11,23 @@ class File {
         void buildBodyVector();
         void buildRawDataVector();
         File(std::string inputFile);
+        std::vector<std::string> properties = {
+            "forearmLeft",
+            "upperarmLeft",
+            "shoulderHalfLeft",
+            "neck",
+            "shoulderHalfRight",
+            "upperarmRight",
+            "shoulder",
+            "upperBody",
+            "hip",
+            "lowerBody",
+            "body",
+            "lowerLegLeft",
+            "upperLegLeft",
+            "upperLegRight",
+            "lowerLegRight"
+        };
     private:
         std::vector<std::vector<std::vector<std::string>>> rawDataVector;
         std::vector<std::vector<bodyProperty>> bodyVector;

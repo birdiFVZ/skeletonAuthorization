@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Christoph/CLionProjects/skeletonAuthorizationasdf
+# Install script for directory: C:/Users/Christoph/CLionProjects/skeletonAuthorization
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Christoph/CLionProjects/skeletonAuthorizationasdf/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Christoph/CLionProjects/skeletonAuthorization/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

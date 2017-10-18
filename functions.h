@@ -8,4 +8,11 @@ std::vector<std::string> splitString(
         char delimiter
 );
 
+float getd3dDistance(
+        std::vector<std::string> first,
+        std::vector<std::string> second
+);
+
+float stringToFloat(std::string inputString);
+
 #endif //TESTPROJECT_FUNCTIONS_H

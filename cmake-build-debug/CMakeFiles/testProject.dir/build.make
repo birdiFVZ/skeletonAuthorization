@@ -42,10 +42,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf
+CMAKE_SOURCE_DIR = C:\Users\Christoph\CLionProjects\skeletonAuthorization
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Christoph\CLionProjects\skeletonAuthorization\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/testProject.dir/depend.make
@@ -58,16 +58,16 @@ include CMakeFiles/testProject.dir/flags.make
 
 CMakeFiles/testProject.dir/main.cpp.obj: CMakeFiles/testProject.dir/flags.make
 CMakeFiles/testProject.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testProject.dir/main.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\testProject.dir\main.cpp.obj -c C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Christoph\CLionProjects\skeletonAuthorization\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testProject.dir/main.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\testProject.dir\main.cpp.obj -c C:\Users\Christoph\CLionProjects\skeletonAuthorization\main.cpp
 
 CMakeFiles/testProject.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testProject.dir/main.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf\main.cpp > CMakeFiles\testProject.dir\main.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Christoph\CLionProjects\skeletonAuthorization\main.cpp > CMakeFiles\testProject.dir\main.cpp.i
 
 CMakeFiles/testProject.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testProject.dir/main.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf\main.cpp -o CMakeFiles\testProject.dir\main.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Christoph\CLionProjects\skeletonAuthorization\main.cpp -o CMakeFiles\testProject.dir\main.cpp.s
 
 CMakeFiles/testProject.dir/main.cpp.obj.requires:
 
@@ -82,16 +82,16 @@ CMakeFiles/testProject.dir/main.cpp.obj.provides.build: CMakeFiles/testProject.d
 
 CMakeFiles/testProject.dir/File.cpp.obj: CMakeFiles/testProject.dir/flags.make
 CMakeFiles/testProject.dir/File.cpp.obj: ../File.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/testProject.dir/File.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\testProject.dir\File.cpp.obj -c C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf\File.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Christoph\CLionProjects\skeletonAuthorization\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/testProject.dir/File.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\testProject.dir\File.cpp.obj -c C:\Users\Christoph\CLionProjects\skeletonAuthorization\File.cpp
 
 CMakeFiles/testProject.dir/File.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testProject.dir/File.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf\File.cpp > CMakeFiles\testProject.dir\File.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Christoph\CLionProjects\skeletonAuthorization\File.cpp > CMakeFiles\testProject.dir\File.cpp.i
 
 CMakeFiles/testProject.dir/File.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testProject.dir/File.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf\File.cpp -o CMakeFiles\testProject.dir\File.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Christoph\CLionProjects\skeletonAuthorization\File.cpp -o CMakeFiles\testProject.dir\File.cpp.s
 
 CMakeFiles/testProject.dir/File.cpp.obj.requires:
 
@@ -106,16 +106,16 @@ CMakeFiles/testProject.dir/File.cpp.obj.provides.build: CMakeFiles/testProject.d
 
 CMakeFiles/testProject.dir/functions.cpp.obj: CMakeFiles/testProject.dir/flags.make
 CMakeFiles/testProject.dir/functions.cpp.obj: ../functions.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/testProject.dir/functions.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\testProject.dir\functions.cpp.obj -c C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf\functions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Christoph\CLionProjects\skeletonAuthorization\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/testProject.dir/functions.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\testProject.dir\functions.cpp.obj -c C:\Users\Christoph\CLionProjects\skeletonAuthorization\functions.cpp
 
 CMakeFiles/testProject.dir/functions.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testProject.dir/functions.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf\functions.cpp > CMakeFiles\testProject.dir\functions.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Christoph\CLionProjects\skeletonAuthorization\functions.cpp > CMakeFiles\testProject.dir\functions.cpp.i
 
 CMakeFiles/testProject.dir/functions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testProject.dir/functions.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf\functions.cpp -o CMakeFiles\testProject.dir\functions.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Christoph\CLionProjects\skeletonAuthorization\functions.cpp -o CMakeFiles\testProject.dir\functions.cpp.s
 
 CMakeFiles/testProject.dir/functions.cpp.obj.requires:
 
@@ -144,7 +144,7 @@ testProject.exe: CMakeFiles/testProject.dir/build.make
 testProject.exe: CMakeFiles/testProject.dir/linklibs.rsp
 testProject.exe: CMakeFiles/testProject.dir/objects1.rsp
 testProject.exe: CMakeFiles/testProject.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable testProject.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Christoph\CLionProjects\skeletonAuthorization\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable testProject.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\testProject.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -163,6 +163,6 @@ CMakeFiles/testProject.dir/clean:
 .PHONY : CMakeFiles/testProject.dir/clean
 
 CMakeFiles/testProject.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf\cmake-build-debug C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf\cmake-build-debug C:\Users\Christoph\CLionProjects\skeletonAuthorizationasdf\cmake-build-debug\CMakeFiles\testProject.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Christoph\CLionProjects\skeletonAuthorization C:\Users\Christoph\CLionProjects\skeletonAuthorization C:\Users\Christoph\CLionProjects\skeletonAuthorization\cmake-build-debug C:\Users\Christoph\CLionProjects\skeletonAuthorization\cmake-build-debug C:\Users\Christoph\CLionProjects\skeletonAuthorization\cmake-build-debug\CMakeFiles\testProject.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/testProject.dir/depend
 
