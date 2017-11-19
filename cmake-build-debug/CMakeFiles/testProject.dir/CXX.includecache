@@ -6,39 +6,31 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/File.cpp
-iostream
--
-fstream
--
-vector
--
-File.h
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/File.h
-functions.h
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/functions.h
-
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/File.h
-
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/functions.cpp
+/home/birdi/CLionProjects/skeletonAuthorization/functions.cpp
 iostream
 -
 functions.h
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/functions.h
+/home/birdi/CLionProjects/skeletonAuthorization/functions.h
 cmath
 -
 
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/functions.h
+/home/birdi/CLionProjects/skeletonAuthorization/functions.h
 vector
 -
 
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/main.cpp
+/home/birdi/CLionProjects/skeletonAuthorization/main.cpp
 iostream
 -
 fstream
 -
 vector
 -
-File.h
-C:/Users/Christoph/CLionProjects/skeletonAuthorization/File.h
+climits
+-
+cmath
+-
+algorithm
+-
+functions.h
+/home/birdi/CLionProjects/skeletonAuthorization/functions.h
 

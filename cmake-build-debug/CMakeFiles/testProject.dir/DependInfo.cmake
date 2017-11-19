@@ -4,9 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Christoph/CLionProjects/skeletonAuthorization/File.cpp" "C:/Users/Christoph/CLionProjects/skeletonAuthorization/cmake-build-debug/CMakeFiles/testProject.dir/File.cpp.obj"
-  "C:/Users/Christoph/CLionProjects/skeletonAuthorization/functions.cpp" "C:/Users/Christoph/CLionProjects/skeletonAuthorization/cmake-build-debug/CMakeFiles/testProject.dir/functions.cpp.obj"
-  "C:/Users/Christoph/CLionProjects/skeletonAuthorization/main.cpp" "C:/Users/Christoph/CLionProjects/skeletonAuthorization/cmake-build-debug/CMakeFiles/testProject.dir/main.cpp.obj"
+  "/home/birdi/CLionProjects/skeletonAuthorization/functions.cpp" "/home/birdi/CLionProjects/skeletonAuthorization/cmake-build-debug/CMakeFiles/testProject.dir/functions.cpp.o"
+  "/home/birdi/CLionProjects/skeletonAuthorization/main.cpp" "/home/birdi/CLionProjects/skeletonAuthorization/cmake-build-debug/CMakeFiles/testProject.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

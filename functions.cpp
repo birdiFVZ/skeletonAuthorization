@@ -6,9 +6,9 @@
 #include <cmath>
 
 std::vector<std::string> splitString(
-        std::string inputString,
-        char delimiter
-) {
+    std::string inputString,
+    char delimiter
+    ) {
     std::vector<std::string> returnVector;
     std::string tempString = "";
     for (
@@ -27,9 +27,9 @@ std::vector<std::string> splitString(
 }
 
 float getd3dDistance(
-        std::vector<std::string> first,
-        std::vector<std::string> second
-) {
+    std::vector<std::string> first,
+    std::vector<std::string> second
+    ) {
     return sqrt(
             pow(stringToFloat(first[2]) - stringToFloat(second[2]),2) +
             pow(stringToFloat(first[3]) - stringToFloat(second[3]),2) +
