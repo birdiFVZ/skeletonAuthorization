@@ -90,9 +90,8 @@ int main() {
     //#######################################################################
     // read File
     //#######################################################################
-    //File testFile("C:\\Users\\Christoph\\CLionProjects\\skeletonAuthorization\\data\\skeletonData5000.txt");
-    //File testFile("C:\\Users\\Birdi\\CLionProjects\\skeletonAuthorization\\data\\skeletonDataOneBody.txt");
-    std::string inputFile("/home/birdi/CLionProjects/skeletonAuthorization/data/skeletonData5000.txt");
+    //std::string inputFile("/home/birdi/CLionProjects/skeletonAuthorization/data/skeletonData5000.txt");
+    std::string inputFile("C:\\Users\\Christoph\\CLionProjects\\skeletonAuthorization20112017\\data\\skeletonData.txt");
 
     std::string line;
     std::vector<std::vector<std::string>> tempDataVector;
@@ -333,16 +332,17 @@ int main() {
     }
 
     //build statistics
-    int lowerQuartilPosition =
-            0.25 * (propertyDataVector[0].values.size() + 1);
-    int medianPosition =
-            0.5 * (propertyDataVector[0].values.size() + 1);
-    int upperQuartilPosition =
-            0.75 * (propertyDataVector[0].values.size() + 1);
+
 
     for (propertyTag = 0;
          propertyTag < bodyVector[0].size();
          propertyTag++) {
+        int lowerQuartilPosition =
+                0.25 * (propertyDataVector[propertyTag].values.size() + 1);
+        int medianPosition =
+                0.5 * (propertyDataVector[propertyTag].values.size() + 1);
+        int upperQuartilPosition =
+                0.75 * (propertyDataVector[propertyTag].values.size() + 1);
         statisticVector[propertyTag].min =
             propertyDataVector[propertyTag].values[0];
         statisticVector[propertyTag].max =
@@ -370,38 +370,25 @@ int main() {
             propertyValueTag++) {
             statisticVector[propertyTag].sum +=
                     propertyDataVector[propertyTag].values[propertyValueTag];
-            /*if(
-                propertyDataVector[propertyTag].values[propertyValueTag] <
-                statisticVector[propertyTag].lowerWhisker ||
-                propertyDataVector[propertyTag].values[propertyValueTag] >
-                statisticVector[propertyTag].upperWhisker
-                ) {
-                statisticVector[propertyTag].amountOutliers++;
-            }*/
             if (
                 propertyDataVector[propertyTag].values[propertyValueTag] <
-                tempLowerWhisker
+                tempUpperWhisker
                 ) {
                 statisticVector[propertyTag].upperWhisker =
                     propertyDataVector[propertyTag].values[propertyValueTag];
+            } else {
                 statisticVector[propertyTag].amountOutliers++;
             }
+
             if (
                 propertyDataVector[propertyTag].values
-                    [propertyDataVector[propertyTag].values.size()
-                    - propertyValueTag -1] >
-                tempUpperWhisker) {
+                    [propertyDataVector[propertyTag].values.size() - propertyValueTag - 1] >
+                tempLowerWhisker) {
                 statisticVector[propertyTag].lowerWhisker =
-                        propertyDataVector[propertyTag].values[propertyValueTag];
+                        propertyDataVector[propertyTag].values
+                        [propertyDataVector[propertyTag].values.size() - propertyValueTag - 1];
+            } else {
                 statisticVector[propertyTag].amountOutliers++;
-            }
-            if (!statisticVector[propertyTag].lowerWhisker) {
-                statisticVector[propertyTag].lowerWhisker =
-                    statisticVector[propertyTag].min;
-            }
-            if (!statisticVector[propertyTag].upperWhisker) {
-                statisticVector[propertyTag].upperWhisker =
-                    statisticVector[propertyTag].max;
             }
         }
         statisticVector[propertyTag].mean =
@@ -410,39 +397,41 @@ int main() {
     }
 
     //write Output & file
-    std::string outputFile = "/home/birdi/CLionProjects/skeletonAuthorization/output/result.csv";
+    //std::string outputFile = "/home/birdi/CLionProjects/skeletonAuthorization/output/resultAll.csv";
+    std::string outputFile = "C:\\Users\\Christoph\\CLionProjects\\skeletonAuthorization20112017\\output\\resultAll.csv";
+
     std::ofstream file;
     file.open(outputFile, std::ofstream::out);
-    file << "property" << "," << "statistic" << "," << "value" << std::endl;
+    file << "property" << ";" << "statistic" << ";" << "value" << std::endl;
     for(propertyTag = 0;
         propertyTag < statisticVector.size();
         propertyTag++
         ) {
         std::cout << statisticVector[propertyTag].name << std::endl;
-        std::cout << "amountDatapoints: " << "\t\t\t\t\t" << statisticVector[propertyTag].amountDatapoints << std::endl;
-        file << statisticVector[propertyTag].name << "," << "amountDataPoints" << "," << statisticVector[propertyTag].amountDatapoints << std::endl;
-        std::cout << "amountOutliers: " << "\t\t\t\t\t" << statisticVector[propertyTag].amountOutliers << std::endl;
-        file << statisticVector[propertyTag].name << "," << "amountOutliers" << "," << statisticVector[propertyTag].amountOutliers << std::endl;
-        std::cout << "minValue: " << "\t\t\t\t\t\t\t" << statisticVector[propertyTag].min << std::endl;
-        file << statisticVector[propertyTag].name << "," << "minValue" << "," << statisticVector[propertyTag].min << std::endl;
-        std::cout << "maxValue: " << "\t\t\t\t\t\t\t" << statisticVector[propertyTag].max << std::endl;
-        file << statisticVector[propertyTag].name << "," << "maxValue" << "," << statisticVector[propertyTag].max << std::endl;
-        std::cout << "sum: " << "\t\t\t\t\t\t\t\t" << statisticVector[propertyTag].sum << std::endl;
-        file << statisticVector[propertyTag].name << "," << "sum" << "," << statisticVector[propertyTag].sum << std::endl;
-        std::cout << "median: " << "\t\t\t\t\t\t\t" << statisticVector[propertyTag].median << std::endl;
-        file << statisticVector[propertyTag].name << "," << "median" << "," << statisticVector[propertyTag].median << std::endl;
-        std::cout << "mean: " << "\t\t\t\t\t\t\t\t" << statisticVector[propertyTag].mean << std::endl;
-        file << statisticVector[propertyTag].name << "," << "mean" << "," << statisticVector[propertyTag].mean << std::endl;
-        std::cout << "lowerQuartile: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].lowerQuartile << std::endl;
-        file << statisticVector[propertyTag].name << "," << "lowerQuartile" << "," << statisticVector[propertyTag].lowerQuartile << std::endl;
-        std::cout << "upperQuartile: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].upperQuartile << std::endl;
-        file << statisticVector[propertyTag].name << "," << "upperQuartile" << "," << statisticVector[propertyTag].upperQuartile << std::endl;
-        std::cout << "quartileDistance: " << "\t\t\t\t\t" << statisticVector[propertyTag].quartileDistance << std::endl;
-        file << statisticVector[propertyTag].name << "," << "quartileDistance" << "," << statisticVector[propertyTag].quartileDistance << std::endl;
         std::cout << "lowerWhisker: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].lowerWhisker << std::endl;
-        file << statisticVector[propertyTag].name << "," << "lowerWhisker" << "," << statisticVector[propertyTag].lowerWhisker << std::endl;
+        file << statisticVector[propertyTag].name << ";" << "lowerWhisker" << ";" << statisticVector[propertyTag].lowerWhisker << std::endl;
+        std::cout << "lowerQuartile: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].lowerQuartile << std::endl;
+        file << statisticVector[propertyTag].name << ";" << "lowerQuartile" << ";" << statisticVector[propertyTag].lowerQuartile << std::endl;
+        std::cout << "median: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].median << std::endl;
+        file << statisticVector[propertyTag].name << ";" << "median" << ";" << statisticVector[propertyTag].median << std::endl;
+        std::cout << "upperQuartile: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].upperQuartile << std::endl;
+        file << statisticVector[propertyTag].name << ";" << "upperQuartile" << ";" << statisticVector[propertyTag].upperQuartile << std::endl;
         std::cout << "upperWhisker: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].upperWhisker << std::endl;
-        file << statisticVector[propertyTag].name << "," << "upperWhisker" << "," << statisticVector[propertyTag].upperWhisker << std::endl;
+        file << statisticVector[propertyTag].name << ";" << "upperWhisker" << ";" << statisticVector[propertyTag].upperWhisker << std::endl;
+        std::cout << "minValue: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].min << std::endl;
+        file << statisticVector[propertyTag].name << ";" << "minValue" << ";" << statisticVector[propertyTag].min << std::endl;
+        std::cout << "maxValue: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].max << std::endl;
+        file << statisticVector[propertyTag].name << ";" << "maxValue" << ";" << statisticVector[propertyTag].max << std::endl;
+        std::cout << "amountDatapoints: " << "\t\t\t\t\t" << statisticVector[propertyTag].amountDatapoints << std::endl;
+        file << statisticVector[propertyTag].name << ";" << "amountDataPoints" << ";" << statisticVector[propertyTag].amountDatapoints << std::endl;
+        std::cout << "amountOutliers: " << "\t\t\t\t\t" << statisticVector[propertyTag].amountOutliers << std::endl;
+        file << statisticVector[propertyTag].name << ";" << "amountOutliers" << ";" << statisticVector[propertyTag].amountOutliers << std::endl;
+        std::cout << "sum: " << "\t\t\t\t\t\t\t" << statisticVector[propertyTag].sum << std::endl;
+        file << statisticVector[propertyTag].name << ";" << "sum" << ";" << statisticVector[propertyTag].sum << std::endl;
+        std::cout << "mean: " << "\t\t\t\t\t\t\t" << statisticVector[propertyTag].mean << std::endl;
+        file << statisticVector[propertyTag].name << ";" << "mean" << ";" << statisticVector[propertyTag].mean << std::endl;
+        std::cout << "quartileDistance: " << "\t\t\t\t\t" << statisticVector[propertyTag].quartileDistance << std::endl;
+        file << statisticVector[propertyTag].name << ";" << "quartileDistance" << ";" << statisticVector[propertyTag].quartileDistance << std::endl;
         std::cout << "************************************************************************************" << std::endl;
     }
 

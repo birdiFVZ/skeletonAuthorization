@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/birdi/CLionProjects/skeletonAuthorization/functions.cpp
+C:/Users/Christoph/CLionProjects/skeletonAuthorization20112017/functions.cpp
 iostream
 -
 functions.h
-/home/birdi/CLionProjects/skeletonAuthorization/functions.h
+C:/Users/Christoph/CLionProjects/skeletonAuthorization20112017/functions.h
 cmath
 -
 
-/home/birdi/CLionProjects/skeletonAuthorization/functions.h
+C:/Users/Christoph/CLionProjects/skeletonAuthorization20112017/functions.h
 vector
 -
 
-/home/birdi/CLionProjects/skeletonAuthorization/main.cpp
+C:/Users/Christoph/CLionProjects/skeletonAuthorization20112017/main.cpp
 iostream
 -
 fstream
@@ -32,5 +32,5 @@ cmath
 algorithm
 -
 functions.h
-/home/birdi/CLionProjects/skeletonAuthorization/functions.h
+C:/Users/Christoph/CLionProjects/skeletonAuthorization20112017/functions.h
 

@@ -1,3 +1,3 @@
-/home/birdi/CLionProjects/skeletonAuthorization/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/birdi/CLionProjects/skeletonAuthorization/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/birdi/CLionProjects/skeletonAuthorization/cmake-build-debug/CMakeFiles/testProject.dir
+C:/Users/Christoph/CLionProjects/skeletonAuthorization20112017/cmake-build-debug/CMakeFiles/testProject.dir
+C:/Users/Christoph/CLionProjects/skeletonAuthorization20112017/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Christoph/CLionProjects/skeletonAuthorization20112017/cmake-build-debug/CMakeFiles/rebuild_cache.dir
