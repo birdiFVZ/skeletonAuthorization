@@ -85,14 +85,14 @@ int main() {
         propertyDataVector[tag] = property;
     }
 
+    std::string fileName = "jsMoving";
 
 
     //#######################################################################
     // read File
     //#######################################################################
     //std::string inputFile("/home/birdi/CLionProjects/skeletonAuthorization/data/skeletonData5000.txt");
-    std::string inputFile("C:\\Users\\Christoph\\CLionProjects\\skeletonAuthorization20112017\\data\\skeletonData.txt");
-
+    std::string inputFile("C:\\Users\\Christoph\\CLionProjects\\skeletonAuthorization20112017\\data\\"+fileName+".txt");
     std::string line;
     std::vector<std::vector<std::string>> tempDataVector;
     char delimiter = ';';
@@ -398,8 +398,7 @@ int main() {
 
     //write Output & file
     //std::string outputFile = "/home/birdi/CLionProjects/skeletonAuthorization/output/resultAll.csv";
-    std::string outputFile = "C:\\Users\\Christoph\\CLionProjects\\skeletonAuthorization20112017\\output\\resultAll.csv";
-
+    std::string outputFile = "C:\\Users\\Christoph\\CLionProjects\\skeletonAuthorization20112017\\output\\"+fileName+".csv";
     std::ofstream file;
     file.open(outputFile, std::ofstream::out);
     file << "property" << ";" << "statistic" << ";" << "value" << std::endl;
