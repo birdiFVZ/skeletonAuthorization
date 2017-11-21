@@ -8,6 +8,11 @@
 
 #define bodyPoints 25
 
+struct mean {
+    int amount;
+    float sum;
+};
+
 struct bodyProperty {
     std::string name;
     float value;
@@ -33,6 +38,7 @@ struct statisticData {
 };
 
 int main() {
+    bool writeOutput = false;
     void buildBodyVector();
     void buildRawDataVector();
     std::vector<std::string> properties = {
@@ -58,7 +64,10 @@ int main() {
     std::vector<statisticData> statisticVector;
     std::vector<propertyData> propertyDataVector;
 
-    //init statisticVector & propertyDataVector
+    //init statisticVector & propertyDataVector & mean
+    mean z;
+    z.amount = 0;
+    z.sum = 0;
     for (int tag = 0;
          tag < properties.size();
          tag++) {
@@ -85,7 +94,7 @@ int main() {
         propertyDataVector[tag] = property;
     }
 
-    std::string fileName = "jsMoving";
+    std::string fileName = "test";
 
 
     //#######################################################################
@@ -310,8 +319,13 @@ int main() {
         bodyPointProperty.push_back(lowerLegRight);
         propertyDataVector[propertyTag].values.push_back(lowerLegRight.value);
 
+        std::cout << stringToFloat(rawDataVector[bodyTag][1][4]) << std::endl;
+        z.sum += stringToFloat(rawDataVector[bodyTag][1][4]);
+        z.amount++;
         bodyVector[bodyTag] = (bodyPointProperty);
     }
+
+    std::cout << "z.mean = " << z.sum / z.amount << std::endl;
 
     //build sortArray
     int propertyTag;
@@ -332,8 +346,6 @@ int main() {
     }
 
     //build statistics
-
-
     for (propertyTag = 0;
          propertyTag < bodyVector[0].size();
          propertyTag++) {
@@ -397,48 +409,63 @@ int main() {
     }
 
     //write Output & file
-    //std::string outputFile = "/home/birdi/CLionProjects/skeletonAuthorization/output/resultAll.csv";
-    std::string outputFile = "C:\\Users\\Christoph\\CLionProjects\\skeletonAuthorization20112017\\output\\"+fileName+".csv";
-    std::ofstream file;
-    file.open(outputFile, std::ofstream::out);
-    file << "property" << ";" << "statistic" << ";" << "value" << std::endl;
-    for(propertyTag = 0;
-        propertyTag < statisticVector.size();
-        propertyTag++
-        ) {
-        std::cout << statisticVector[propertyTag].name << std::endl;
-        std::cout << "lowerWhisker: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].lowerWhisker << std::endl;
-        file << statisticVector[propertyTag].name << ";" << "lowerWhisker" << ";" << statisticVector[propertyTag].lowerWhisker << std::endl;
-        std::cout << "lowerQuartile: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].lowerQuartile << std::endl;
-        file << statisticVector[propertyTag].name << ";" << "lowerQuartile" << ";" << statisticVector[propertyTag].lowerQuartile << std::endl;
-        std::cout << "median: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].median << std::endl;
-        file << statisticVector[propertyTag].name << ";" << "median" << ";" << statisticVector[propertyTag].median << std::endl;
-        std::cout << "upperQuartile: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].upperQuartile << std::endl;
-        file << statisticVector[propertyTag].name << ";" << "upperQuartile" << ";" << statisticVector[propertyTag].upperQuartile << std::endl;
-        std::cout << "upperWhisker: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].upperWhisker << std::endl;
-        file << statisticVector[propertyTag].name << ";" << "upperWhisker" << ";" << statisticVector[propertyTag].upperWhisker << std::endl;
-        std::cout << "minValue: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].min << std::endl;
-        file << statisticVector[propertyTag].name << ";" << "minValue" << ";" << statisticVector[propertyTag].min << std::endl;
-        std::cout << "maxValue: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].max << std::endl;
-        file << statisticVector[propertyTag].name << ";" << "maxValue" << ";" << statisticVector[propertyTag].max << std::endl;
-        std::cout << "amountDatapoints: " << "\t\t\t\t\t" << statisticVector[propertyTag].amountDatapoints << std::endl;
-        file << statisticVector[propertyTag].name << ";" << "amountDataPoints" << ";" << statisticVector[propertyTag].amountDatapoints << std::endl;
-        std::cout << "amountOutliers: " << "\t\t\t\t\t" << statisticVector[propertyTag].amountOutliers << std::endl;
-        file << statisticVector[propertyTag].name << ";" << "amountOutliers" << ";" << statisticVector[propertyTag].amountOutliers << std::endl;
-        std::cout << "sum: " << "\t\t\t\t\t\t\t" << statisticVector[propertyTag].sum << std::endl;
-        file << statisticVector[propertyTag].name << ";" << "sum" << ";" << statisticVector[propertyTag].sum << std::endl;
-        std::cout << "mean: " << "\t\t\t\t\t\t\t" << statisticVector[propertyTag].mean << std::endl;
-        file << statisticVector[propertyTag].name << ";" << "mean" << ";" << statisticVector[propertyTag].mean << std::endl;
-        std::cout << "quartileDistance: " << "\t\t\t\t\t" << statisticVector[propertyTag].quartileDistance << std::endl;
-        file << statisticVector[propertyTag].name << ";" << "quartileDistance" << ";" << statisticVector[propertyTag].quartileDistance << std::endl;
-        std::cout << "************************************************************************************" << std::endl;
+    if (writeOutput) {
+        //std::string outputFile = "/home/birdi/CLionProjects/skeletonAuthorization/output/resultAll.csv";
+        std::string outputFile =
+                "C:\\Users\\Christoph\\CLionProjects\\skeletonAuthorization20112017\\output\\" + fileName + ".csv";
+        std::ofstream file;
+        file.open(outputFile, std::ofstream::out);
+        file << "property" << ";" << "statistic" << ";" << "value" << std::endl;
+        for (propertyTag = 0;
+             propertyTag < statisticVector.size();
+             propertyTag++
+                ) {
+            std::cout << statisticVector[propertyTag].name << std::endl;
+            std::cout << "lowerWhisker: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].lowerWhisker << std::endl;
+            file << statisticVector[propertyTag].name << ";" << "lowerWhisker" << ";"
+                 << statisticVector[propertyTag].lowerWhisker << std::endl;
+            std::cout << "lowerQuartile: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].lowerQuartile << std::endl;
+            file << statisticVector[propertyTag].name << ";" << "lowerQuartile" << ";"
+                 << statisticVector[propertyTag].lowerQuartile << std::endl;
+            std::cout << "median: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].median << std::endl;
+            file << statisticVector[propertyTag].name << ";" << "median" << ";" << statisticVector[propertyTag].median
+                 << std::endl;
+            std::cout << "upperQuartile: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].upperQuartile << std::endl;
+            file << statisticVector[propertyTag].name << ";" << "upperQuartile" << ";"
+                 << statisticVector[propertyTag].upperQuartile << std::endl;
+            std::cout << "upperWhisker: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].upperWhisker << std::endl;
+            file << statisticVector[propertyTag].name << ";" << "upperWhisker" << ";"
+                 << statisticVector[propertyTag].upperWhisker << std::endl;
+            std::cout << "minValue: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].min << std::endl;
+            file << statisticVector[propertyTag].name << ";" << "minValue" << ";" << statisticVector[propertyTag].min
+                 << std::endl;
+            std::cout << "maxValue: " << "\t\t\t\t\t\t" << statisticVector[propertyTag].max << std::endl;
+            file << statisticVector[propertyTag].name << ";" << "maxValue" << ";" << statisticVector[propertyTag].max
+                 << std::endl;
+            std::cout << "amountDatapoints: " << "\t\t\t\t\t" << statisticVector[propertyTag].amountDatapoints
+                      << std::endl;
+            file << statisticVector[propertyTag].name << ";" << "amountDataPoints" << ";"
+                 << statisticVector[propertyTag].amountDatapoints << std::endl;
+            std::cout << "amountOutliers: " << "\t\t\t\t\t" << statisticVector[propertyTag].amountOutliers << std::endl;
+            file << statisticVector[propertyTag].name << ";" << "amountOutliers" << ";"
+                 << statisticVector[propertyTag].amountOutliers << std::endl;
+            std::cout << "sum: " << "\t\t\t\t\t\t\t" << statisticVector[propertyTag].sum << std::endl;
+            file << statisticVector[propertyTag].name << ";" << "sum" << ";" << statisticVector[propertyTag].sum
+                 << std::endl;
+            std::cout << "mean: " << "\t\t\t\t\t\t\t" << statisticVector[propertyTag].mean << std::endl;
+            file << statisticVector[propertyTag].name << ";" << "mean" << ";" << statisticVector[propertyTag].mean
+                 << std::endl;
+            std::cout << "quartileDistance: " << "\t\t\t\t\t" << statisticVector[propertyTag].quartileDistance
+                      << std::endl;
+            file << statisticVector[propertyTag].name << ";" << "quartileDistance" << ";"
+                 << statisticVector[propertyTag].quartileDistance << std::endl;
+            std::cout << "************************************************************************************"
+                      << std::endl;
+        }
+
+
+        file.close();
     }
-
-    //write file
-
-
-    file.close();
-
 
     std::cout << "done" << std::endl;
 
