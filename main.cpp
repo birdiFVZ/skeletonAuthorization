@@ -94,14 +94,14 @@ int main() {
         propertyDataVector[tag] = property;
     }
 
-    std::string fileName = "test";
+    std::string fileName = "cvNoMoving";
 
 
     //#######################################################################
     // read File
     //#######################################################################
-    //std::string inputFile("/home/birdi/CLionProjects/skeletonAuthorization/data/skeletonData5000.txt");
-    std::string inputFile("C:\\Users\\Christoph\\CLionProjects\\skeletonAuthorization20112017\\data\\"+fileName+".txt");
+    std::string inputFile("/home/birdi/CLionProjects/skeletonAuthorization04122017/data/" + fileName + ".txt");
+    //std::string inputFile("C:\\Users\\Christoph\\CLionProjects\\skeletonAuthorization20112017\\data\\"+fileName+".txt");
     std::string line;
     std::vector<std::vector<std::string>> tempDataVector;
     char delimiter = ';';
@@ -325,7 +325,30 @@ int main() {
         bodyVector[bodyTag] = (bodyPointProperty);
     }
 
-    std::cout << "z.mean = " << z.sum / z.amount << std::endl;
+    //write calcData
+
+        std::string outputFile = "/home/birdi/CLionProjects/skeletonAuthorization04122017/calcData/" + fileName + ".csv";
+        //std::string outputFile =
+                //"C:\\Users\\Christoph\\CLionProjects\\skeletonAuthorization20112017\\calcData\\" + fileName + ".csv";
+        std::ofstream file;
+        file.open(outputFile, std::ofstream::out);
+        file << "property" << ";" << "value" << std::endl;
+        for (bodyTag = 0;
+             bodyTag < bodyVector.size();
+             bodyTag++
+                ) {
+            for (bodyPointTag = 0;
+                 bodyPointTag < bodyVector[bodyTag].size();
+                 bodyPointTag++) {
+                file << bodyVector[bodyTag][bodyPointTag].name << ';' <<
+                        bodyVector[bodyTag][bodyPointTag].value << std::endl;
+            }
+
+        }
+
+
+        file.close();
+
 
     //build sortArray
     int propertyTag;
